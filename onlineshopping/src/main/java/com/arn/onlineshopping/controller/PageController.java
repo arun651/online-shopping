@@ -10,35 +10,58 @@ public class PageController {
 	@RequestMapping(value={"/", "/home", "/index"})
 	public ModelAndView index() {
 		
-		System.out.println("i m here");
+		System.out.println("i m in home");
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting", "Welcome to Spring MVC");
+		mv.addObject("title", "Home");
+		mv.addObject("userClickHome", true);
 		return mv;
 	}
-	
-//	-- DEMO USING @RequestParam ANNOTATION
-//	@RequestMapping("/test")
-//	public ModelAndView test(@RequestParam(value="greeting", required=false) String greeting){
-//		System.out.println("i m here");
-//		if(greeting == null){
-//			greeting = "Hello there";
-//		}
-//		ModelAndView mv = new ModelAndView("page");
-//		mv.addObject("greeting", greeting);
-//		return mv;
-//	}
 
-//	-- DEMO USING @PathVariable ANNOTATION
-//	@RequestMapping("/test/{greeting}")
-//	public ModelAndView test(@PathVariable("greeting") String greeting){
-//		System.out.println("i m here");
-//		if(greeting == null){
-//			greeting = "Hello there";
-//		}
-//		ModelAndView mv = new ModelAndView("page");
-//		mv.addObject("greeting", greeting);
-//		return mv;
-//	}
+	@RequestMapping(value={"/about"})
+	public ModelAndView about() {	
+		System.out.println("i m in about us");
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "About Us");
+		mv.addObject("userClickAbout", true);
+		return mv;
+	}
+
+	@RequestMapping(value={"/contact"})
+	public ModelAndView contact() {
+		
+		System.out.println("i m in contact us");
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title", "Contact Us");
+		mv.addObject("userClickContact", true);
+		return mv;
+	}
+
 
 
 }
+
+
+
+//-- DEMO USING @RequestParam ANNOTATION
+//@RequestMapping("/test")
+//public ModelAndView test(@RequestParam(value="greeting", required=false) String greeting){
+//	System.out.println("i m here");
+//	if(greeting == null){
+//		greeting = "Hello there";
+//	}
+//	ModelAndView mv = new ModelAndView("page");
+//	mv.addObject("greeting", greeting);
+//	return mv;
+//}
+
+//-- DEMO USING @PathVariable ANNOTATION
+//@RequestMapping("/test/{greeting}")
+//public ModelAndView test(@PathVariable("greeting") String greeting){
+//	System.out.println("i m here");
+//	if(greeting == null){
+//		greeting = "Hello there";
+//	}
+//	ModelAndView mv = new ModelAndView("page");
+//	mv.addObject("greeting", greeting);
+//	return mv;
+//}
