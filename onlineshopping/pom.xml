@@ -15,6 +15,13 @@
 	</properties>
 
 	<dependencies>
+		<!-- LINKING BACKEND PROJECT -->
+		<dependency>
+			<groupId>com.arn</groupId>
+			<artifactId>shoppingbackend</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
 		<!-- JAVA EE API -->
 		<dependency>
 			<groupId>javax</groupId>
